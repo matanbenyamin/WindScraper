@@ -14,6 +14,6 @@ d9 = wf.get_wind_at_time(c, 9)
 d7 = 0.333*float(d9)+0.6666*float(d6)
 print('wind in 7:00: ' + str(np.round(d7,0)) + ' Kts' )
 
-w6 = wf.get_wave_at_time(c, 6)
+w6 = wf.get_wave_at_time(c, 9)
 
 
