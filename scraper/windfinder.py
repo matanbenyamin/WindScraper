@@ -23,11 +23,16 @@ def get_date_div(soup, req_date):
         date_ind = -1
     else:
         req_date = req_date.strftime('%b %d')
+        date_ind = -1
         for ind, div in  enumerate(all_divs):
             div_date = div.get_text()
             loc = div_date.find(req_date)
             if loc > -1:
                 date_ind = ind
+
+    if date_ind==-1:
+        return [],-1
+
 
     given_date = all_divs[date_ind].get_text()
     given_date = given_date[given_date.find('\n',1)+10:given_date.find('\n',2)].strip()

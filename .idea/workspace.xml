@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73cb79c7-7f82-4c84-806e-cda4a537d9c9" name="Changes" comment="added wave in case forecast is close">
+    <list default="true" id="73cb79c7-7f82-4c84-806e-cda4a537d9c9" name="Changes" comment="run over dates">
+      <change afterPath="$PROJECT_DIR$/notify/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notify/notifications.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notify/telegram.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/WindSlotFinder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WindSlotFinder.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scraper/windfinder.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraper/windfinder.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +45,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="Python" />
-    <property name="settings.editor.selected.configurable" value="MTHome" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -48,7 +56,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1630396735299</updated>
-      <workItem from="1630992709714" duration="361000" />
+      <workItem from="1630992709714" duration="1358000" />
+      <workItem from="1631003330452" duration="7000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1630906665991</created>
@@ -71,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630908584753</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="run over dates">
+      <created>1630993275539</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1630993275539</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,7 +109,8 @@
     <MESSAGE value="first" />
     <MESSAGE value="edited main" />
     <MESSAGE value="added wave in case forecast is close" />
-    <option name="LAST_COMMIT_MESSAGE" value="added wave in case forecast is close" />
+    <MESSAGE value="run over dates" />
+    <option name="LAST_COMMIT_MESSAGE" value="run over dates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
