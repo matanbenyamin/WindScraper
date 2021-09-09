@@ -1,12 +1,9 @@
-#  pip freeze > requirements.txt
+# pip freeze > requirements.txt
 # pip install - r requirements.txt
-
-
-
 ## how to create the telegram bot
 # https://medium.com/@robertbracco1/how-to-write-a-telegram-bot-to-send-messages-with-python-bcdf45d0a580
-import yaml
 
+import yaml
 from scraper.windfinder import Windfinder
 import telegram_send
 import numpy as np
