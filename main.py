@@ -5,17 +5,20 @@
 
 ## how to create the telegram bot
 # https://medium.com/@robertbracco1/how-to-write-a-telegram-bot-to-send-messages-with-python-bcdf45d0a580
-
-
+import yaml
 
 from scraper.windfinder import Windfinder
 import telegram_send
 import numpy as np
 
+stream = open("config.yaml")
+dict = yaml.load(stream)
+
+
 wf = Windfinder()
 soup = wf.get_soup()
-df = wf.get_forecast_df(soup=soup, hour=6)
-df = df[(df['wind'] > 5) & (df['wave'] < 1)]
+df = wf.get_forecast_df(soup=soup, hour=dict['notifications']['sailing_hour'])
+df = df[(df['wind'] > dict['thresholds']['wind']) & (df['wave'] < dict['thresholds']['wave'])]
 print(df)
 
 
