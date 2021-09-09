@@ -83,9 +83,7 @@ class Windfinder(Scraper):
             if len(c) < 1:
                 forecast_flag = False
                 continue
-            d6 = self.get_wind_at_time(c, 6)
-            d9 = self.get_wind_at_time(c, 9)
-            d7 = 0.333 * float(d9) + 0.6666 * float(d6)
+            d7 = self.get_wind_at_time(c, hour)
             w6 = float(self.get_wave_at_time(c, hour))
             df = df.append(
                 pd.DataFrame(data=[[week_dict[curr_day.weekday()], d7, w6]], index=[curr_day],
