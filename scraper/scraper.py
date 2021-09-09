@@ -10,17 +10,17 @@ class Scraper:
     def __init__(self):
         pass
 
-    def get_forecast_df(soup, hour):
+    def get_forecast_df(self, soup, hour):
         pass
 
-    def get_wave_at_time(date_div, time):
+    def get_wave_at_time(self, date_div, time):
         pass
 
-    def get_soup(spot='marina_tel_aviv'):
+    def get_soup(self, spot='marina_tel_aviv'):
        pass
 
-    def get_date_div(soup, req_date):
+    def get_date_div(self, soup, req_date):
         pass
 
-    def get_wind_at_time(date_div, time):
+    def get_wind_at_time(self, date_div, time):
         pass

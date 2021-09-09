@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73cb79c7-7f82-4c84-806e-cda4a537d9c9" name="Changes" comment="changed hirarchy">
-      <change beforePath="$PROJECT_DIR$/.idea/WindSlotFinder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WindSlotFinder.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="73cb79c7-7f82-4c84-806e-cda4a537d9c9" name="Changes" comment="switched to class">
       <change beforePath="$PROJECT_DIR$/scraper/scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraper/scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scraper/windfinder.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraper/windfinder.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631167041581</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="switched to class">
+      <created>1631168655680</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1631168655680</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,7 +157,8 @@
     <MESSAGE value="run over dates" />
     <MESSAGE value="notifications" />
     <MESSAGE value="changed hirarchy" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed hirarchy" />
+    <MESSAGE value="switched to class" />
+    <option name="LAST_COMMIT_MESSAGE" value="switched to class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
