@@ -1,11 +1,13 @@
 from scraper import windfinder as wf
 from datetime import datetime, date
 import numpy as np
-from notify.notifications import get_best_day
 
 soup = wf.get_windfinder_soup()
+df = wf.get_forecast_df(soup = soup, hour =8)
 
-df = get_best_day(soup = soup,wind_threshold = 0,wave_threshold = 100, hour =8)
+
+
+print(df[(df['wind']>5) & (df['wave']<1)])
 
 req_date= 'last'
 req_date = datetime.today()
