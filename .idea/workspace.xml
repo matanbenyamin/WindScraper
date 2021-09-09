@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73cb79c7-7f82-4c84-806e-cda4a537d9c9" name="Changes" comment="notifications">
+    <list default="true" id="73cb79c7-7f82-4c84-806e-cda4a537d9c9" name="Changes" comment="changed hirarchy">
       <change beforePath="$PROJECT_DIR$/.idea/WindSlotFinder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WindSlotFinder.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notify/notifications.py" beforeDir="false" afterPath="$PROJECT_DIR$/notify/notifications.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scraper/scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraper/scraper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scraper/windfinder.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraper/windfinder.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631115729630</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="changed hirarchy">
+      <created>1631167041581</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1631167041581</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,7 +153,8 @@
     <MESSAGE value="added wave in case forecast is close" />
     <MESSAGE value="run over dates" />
     <MESSAGE value="notifications" />
-    <option name="LAST_COMMIT_MESSAGE" value="notifications" />
+    <MESSAGE value="changed hirarchy" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed hirarchy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

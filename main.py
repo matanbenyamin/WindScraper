@@ -1,11 +1,12 @@
-from scraper import windfinder as wf
+from scraper.windfinder import Windfinder
 from datetime import datetime, date
 import numpy as np
 
-soup = wf.get_windfinder_soup()
+
+
+wf = Windfinder()
+soup = wf.get_soup()
 df = wf.get_forecast_df(soup = soup, hour =8)
-
-
 
 print(df[(df['wind']>5) & (df['wave']<1)])
 
