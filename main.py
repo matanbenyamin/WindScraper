@@ -5,13 +5,14 @@ from notify.notifications import get_best_day
 
 soup = wf.get_windfinder_soup()
 
-df = get_best_day(soup = soup,wind_threshold = 5,wave_threshold = 1, hour = 0)
+df = get_best_day(soup = soup,wind_threshold = 0,wave_threshold = 100, hour =8)
 
 req_date= 'last'
+req_date = datetime.today()
 c, given_date = wf.get_date_div(soup, req_date)
 
 d6 = wf.get_wind_at_time(c, 6)
 d9 = wf.get_wind_at_time(c, 9)
 d7 = 0.333*float(d9)+0.6666*float(d6)
 print('wind in 7:00: ' + str(np.round(d7,0)) + ' Kts' )
-w6 = wf.get_wave_at_time(c, 9)
+w6 = wf.get_wave_at_time(c, 6)

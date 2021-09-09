@@ -11,8 +11,8 @@ def get_best_day(soup, wind_threshold, wave_threshold, hour):
     i=-1
     while forecast_flag:
         i=i+1
-        today = datetime.strftime(datetime.today(), '%b %d')
         curr_day = datetime.today() + timedelta(days=i)
+        curr_day = curr_day.replace(hour=hour, minute=0, second=0,  microsecond = 0)
         c, given_date = wf.get_date_div(soup, curr_day)
         if len(c)<1:
             forecast_flag = False
@@ -20,10 +20,9 @@ def get_best_day(soup, wind_threshold, wave_threshold, hour):
         d6 = wf.get_wind_at_time(c, 6)
         d9 = wf.get_wind_at_time(c, 9)
         d7 = 0.333 * float(d9) + 0.6666 * float(d6)
-        print('wind in 7:00: ' + str(np.round(d7, 0)) + ' Kts')
-        w6 = float(wf.get_wave_at_time(c, 9))
+        w6 = float(wf.get_wave_at_time(c, hour))
         if d7 > wind_threshold and w6 < wave_threshold:
             df = df.append(
-                pd.DataFrame(data=[[week_dict[curr_day.weekday()],d7, w6]], index=[datetime.today() + timedelta(days=i)], columns=['weekday','wind', 'wave']))
+                pd.DataFrame(data=[[week_dict[curr_day.weekday()],d7, w6]], index=[curr_day], columns=['weekday','wind', 'wave']))
 
     return df

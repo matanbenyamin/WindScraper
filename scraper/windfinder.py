@@ -36,24 +36,37 @@ def get_date_div(soup, req_date):
 
     given_date = all_divs[date_ind].get_text()
     given_date = given_date[given_date.find('\n',1)+10:given_date.find('\n',2)].strip()
-    print(given_date)
     b = all_divs[date_ind].find_parent()
     return  b, given_date
 
 def get_wind_at_time(date_div, time):
-    date_div_wind = date_div.find_all("div", {"class": "speed"})
-    hours = [24, 3, 6, 9 ,12, 15, 18, 21]
-    ind = hours.index(time)
-    if ind == -1:
-        return -1
 
-    return date_div_wind[ind].find_all('span',{"class": "units-ws"})[0].get_text()
+    date_div_wind = date_div.find_all("div", {"class": "speed"})
+    if len(date_div_wind) < 8:
+        return -1
+    hours = np.array([0, 3, 6, 9, 12, 15, 18, 21])
+    ind = np.where((hours >= time - 1) & (hours <= time + 1))
+    ind2 = np.where(hours >= time)[0][0]
+    ind1 = np.where(hours <= time)[-1][-1]
+
+    w1 = float(date_div_wind[ind1].find_all('span', {"class": "units-ws"})[0].get_text())
+    w2 = float(date_div_wind[ind2].find_all('span', {"class": "units-ws"})[0].get_text())
+
+    return np.interp(time, [hours[ind1], hours[ind2]], [w1, w2])
 
 def get_wave_at_time(date_div, time):
-    date_div_wave = date_div.find_all("div", {"class": "data-waveheight"})
-    hours = [24, 3, 6, 9 ,12, 15, 18, 21]
-    ind = hours.index(time)
-    if ind == -1 or len(date_div_wave)==0:
-        return -1
 
-    return date_div_wave[ind].find_all('span',{"class": "units-wh"})[0].get_text()
+    date_div_wave = date_div.find_all("div", {"class": "data-waveheight"})
+    if len(date_div_wave)<8:
+        return -1
+    hours = np.array([0, 3, 6, 9 ,12, 15, 18, 21])
+    ind = np.where((hours>=time-1) & (hours<=time+1))
+    ind2 = np.where(hours >= time)[0][0]
+    ind1 = np.where(hours<=time)[-1][-1]
+
+    w1 = float(date_div_wave[ind1].find_all('span', {"class": "units-wh"})[0].get_text())
+    w2 = float(date_div_wave[ind2].find_all('span', {"class": "units-wh"})[0].get_text())
+
+
+    return np.interp(time, [hours[ind1], hours[ind2]], [w1, w2])
+
