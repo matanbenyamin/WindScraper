@@ -1,5 +1,5 @@
 thresholds:
-  wind: 6 # knots, minimal wind for sailing
+  wind: 4 # knots, minimal wind for sailing
   wave: 1 # meters, maximal waves for sailing
 
 notifications:
