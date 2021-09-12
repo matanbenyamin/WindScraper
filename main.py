@@ -12,7 +12,7 @@ from scraper.windfinder import Windfinder
 import telegram_send
 import numpy as np
 
-#stream = open("config.yaml")
+#       stream = open("config.yaml")
 stream = open("C:\\Users\lab7\PycharmProjects\WindScraper\config.yaml")
 dict = yaml.load(stream)
 
