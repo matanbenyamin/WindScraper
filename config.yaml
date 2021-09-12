@@ -1,0 +1,8 @@
+thresholds:
+  wind: 4 # knots, minimal wind for sailing
+  wave: 1 # meters, maximal waves for sailing
+
+notifications:
+  sailing_hour: 7 #24h hour, sailing start
+  saling_duration: 2 #hr
+

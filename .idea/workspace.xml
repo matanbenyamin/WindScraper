@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73cb79c7-7f82-4c84-806e-cda4a537d9c9" name="Changes" comment="switched to class">
-      <change afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
+    <list default="true" id="73cb79c7-7f82-4c84-806e-cda4a537d9c9" name="Changes" comment="added yaml">
       <change beforePath="$PROJECT_DIR$/.idea/WindSlotFinder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WindSlotFinder.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scraper/windfinder.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraper/windfinder.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +148,28 @@
       <option name="project" value="LOCAL" />
       <updated>1631168687879</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added telegram notification">
+      <created>1631177664689</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1631177664690</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added yaml">
+      <created>1631181773440</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1631181773440</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added yaml">
+      <created>1631181946182</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1631181946182</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,7 +195,9 @@
     <MESSAGE value="notifications" />
     <MESSAGE value="changed hirarchy" />
     <MESSAGE value="switched to class" />
-    <option name="LAST_COMMIT_MESSAGE" value="switched to class" />
+    <MESSAGE value="added telegram notification" />
+    <MESSAGE value="added yaml" />
+    <option name="LAST_COMMIT_MESSAGE" value="added yaml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
