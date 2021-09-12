@@ -72,7 +72,8 @@ if len(updates) > 0:
 
 # get all caht ids
 for user in data:
-
+    if user == 123:
+        continue
     # get df and user data
     user_data = data[user]
     wf = Windfinder()
