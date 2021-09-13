@@ -17,7 +17,7 @@ tb = telebot.TeleBot(TOKEN)  # create a new Telegram Bot object
 
 
 fname = "config.yaml"
-fname = "C:\\Users\lab7\PycharmProjects\WindScraper\config.yaml"
+#fname = "C:\\Users\lab7\PycharmProjects\WindScraper\config.yaml"
 stream = open(fname, 'r')
 data = yaml.load(stream)
 ref_data = data[123]
@@ -53,7 +53,6 @@ if len(updates) > 0:
             # update yaml
             if user_id not in data.keys():  # new id
                 data[user_id] = copy.deepcopy(ref_data)
-
             user_data = data[user_id]
             user_data = update_config(mess, user_data)
 
@@ -84,7 +83,7 @@ for user in data:
     # generate messag and send
     if len(df) > 0:
         for ind in df.index:
-            mess = 'Next ' + df['weekday'][ind] + ',' + str(ind.day) + '.' + str(ind.month) + ' has ' + \
+            mess = 'Next ' + df['weekday'][ind] + ',' + str(ind.day) + '.' + str(ind.month) + ', has ' + \
                    str(int(df['wind'][ind])) + ' Kts '
             if df['wave'][ind] > -1:
                 mess = mess + 'and ' + str(int(100 * np.round(df['wave'][ind], 1))) + ' cm waves '
