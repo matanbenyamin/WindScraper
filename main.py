@@ -24,6 +24,7 @@ ref_data = data[123]
 
 
 def update_config(mess, data_dict):
+
     if 'wind_th' in mess:
         val = [int(s) for s in mess.split() if s.isdigit()]
         data_dict['thresholds']['wind'] = val[0]
@@ -35,6 +36,8 @@ def update_config(mess, data_dict):
     if 'hour' in mess:
         val = [int(s) for s in mess.split() if s.isdigit()]
         data_dict['notifications']['hour'] = val[0]
+
+
     return data_dict
 
 # new flow
@@ -43,22 +46,29 @@ def update_config(mess, data_dict):
 updates = tb.get_updates()
 if len(updates) > 0:
     for up in updates:
+
         #try:
-            user_id = up.message.chat.id
-            if user_id==123:
-                continue
-            mess = up.message.text
-            # check validity
+        user_id = up.message.chat.id
+        if user_id==123:
+            continue
+        mess = up.message.text
 
-            # update yaml
-            if user_id not in data.keys():  # new id
-                data[user_id] = copy.deepcopy(ref_data)
-            user_data = data[user_id]
-            user_data = update_config(mess, user_data)
 
-            with open(fname, 'w') as yaml_file:
-                yaml_file.write(yaml.dump(data, default_flow_style=False))
-        #except:
+        # check validity
+
+        # update yaml
+        if user_id not in data.keys():  # new id
+            data[user_id] = copy.deepcopy(ref_data)
+        user_data = data[user_id]
+        user_data = update_config(mess, user_data)
+
+        # remove user
+        if 'stop' in mess.lower():
+            del data[user_id]
+
+        with open(fname, 'w') as yaml_file:
+            yaml_file.write(yaml.dump(data, default_flow_style=False))
+         #except:
          #   print('failed')
 
 # syntax:

@@ -14,11 +14,3 @@
   thresholds:
     wave: 3
     wind: 2
-1986263919:
-  notifications:
-    sailing_hour: 7
-    saling_duration: 2
-    spot: marina_tel_aviv
-  thresholds:
-    wave: 1
-    wind: 4

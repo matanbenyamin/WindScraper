@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73cb79c7-7f82-4c84-806e-cda4a537d9c9" name="Changes" comment="added yaml">
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +230,8 @@
     <MESSAGE value="switched to class" />
     <MESSAGE value="added telegram notification" />
     <MESSAGE value="added yaml" />
-    <option name="LAST_COMMIT_MESSAGE" value="added yaml" />
+    <MESSAGE value="multi user" />
+    <option name="LAST_COMMIT_MESSAGE" value="multi user" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
