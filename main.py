@@ -89,7 +89,7 @@ for user in data:
     df = wf.get_forecast_df(hour=user_data['notifications']['sailing_hour'])
     df = df[(df['wind'] > user_data['thresholds']['wind']) & (df['wave'] < user_data['thresholds']['wave'])]
 
-    ws = wIndScraper()
+    #ws = wIndScraper()
 
     # generate messag and send
     if len(df) > 0:

@@ -40,30 +40,30 @@ class Windguru(Scraper):
         time.sleep(0.5)
         a = d.find_elements_by_id('tabid_0_0_WINDSPD')[0]
         winds = [int(x) for x in a.text.split()]
+
         a = d.find_elements_by_id('tabid_0_0_HTSGW')[0]
         waves = [float(x) for x in a.text.split()]
+
         a = d.find_elements_by_id('tabid_0_0_dates')[0]
         a = a.text.split()[2::3]
-        dates = [x[0:2] for x in a]
+        hours = [int(x[0:2]) for x in a]
 
-        for day in range(0,len(winds),9):
-            curr_day_winds = winds[day:day+8]
-
-
-        forecast_flag = True
-        i = -1
-        while forecast_flag:
-            i = i + 1
-            curr_day = datetime.today() + timedelta(days=i)
+        day_breaks = np.array(np.where(np.array(hours)<5))
+        day_breaks = day_breaks[0].tolist()
+        day_breaks.insert(0,0)
+        for ind in range(1,len(day_breaks)):
+            curr_day = datetime.today() + timedelta(days=ind)
             curr_day = curr_day.replace(hour=hour, minute=0, second=0, microsecond=0)
-            c, given_date = self.get_date_div(soup, curr_day)
-            if len(c) < 1:
-                forecast_flag = False
-                continue
-            d7 = self.get_wind_at_time(c, hour)
-            w6 = float(self.get_wave_at_time(c, hour))
+
+            curr_day_hours = hours[day_breaks[ind-1]:day_breaks[ind]]
+            curr_day_winds = winds[day_breaks[ind-1]:day_breaks[ind]]
+            curr_day_waves = waves[day_breaks[ind-1]:day_breaks[ind]]
+
+            req_hour_wind = np.interp(hour, curr_day_hours, curr_day_winds)
+            req_hour_wave = np.interp(hour, curr_day_hours, curr_day_waves)
+
             df = df.append(
-                pd.DataFrame(data=[[week_dict[curr_day.weekday()], d7, w6]], index=[curr_day],
+                pd.DataFrame(data=[[week_dict[curr_day.weekday()], req_hour_wind, req_hour_wave]], index=[curr_day],
                              columns=['weekday', 'wind', 'wave']))
 
         return df

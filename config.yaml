@@ -14,3 +14,11 @@
   thresholds:
     wave: 1.3
     wind: 5
+2037551057:
+  notifications:
+    sailing_hour: 7
+    saling_duration: 2
+    spot: marina_tel_aviv
+  thresholds:
+    wave: 1
+    wind: 4
