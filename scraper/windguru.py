@@ -3,14 +3,13 @@ from bs4 import BeautifulSoup
 import numpy as np
 from datetime import datetime, date, timedelta
 import pandas as pd
-from scraper.scraper import Scraper
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 
 
-class Windguru(Scraper):
+class Windguru():
 
     def get_wind_at_time(self, date_div, time):
         pass

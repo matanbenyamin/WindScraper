@@ -7,9 +7,11 @@
 import sys
 import copy
 from scraper.windfinder import Windfinder
+from scraper.windguru import Windguru
 import numpy as np
 import yaml
 import telebot
+from scraper.scraper import Scraper
 
 TOKEN = "1972757944:AAHSZ3MjqycJVZieWv-7MPgCAkYQuiKM_OA"
 tb = telebot.TeleBot(TOKEN)  # create a new Telegram Bot object
@@ -37,6 +39,8 @@ def update_config(mess, data_dict):
         val = [int(s) for s in mess.split() if s.isdigit()]
         data_dict['notifications']['hour'] = val[0]
 
+    if 'site' in mess:
+        data_dict['site'] = mess.split()[-1]
 
     return data_dict
 
@@ -75,6 +79,8 @@ if len(updates) > 0:
 # wind_th = 7
 # wave_th = 1
 # hour =
+# site = windguru/windfinder
+# spot?
 
 #def update_config_file(updates, data):
 
@@ -85,11 +91,10 @@ for user in data:
         continue
     # get df and user data
     user_data = data[user]
-    wf = Windfinder()
-    df = wf.get_forecast_df(hour=user_data['notifications']['sailing_hour'])
-    df = df[(df['wind'] > user_data['thresholds']['wind']) & (df['wave'] < user_data['thresholds']['wave'])]
 
-    #ws = wIndScraper()
+    ws = Scraper(site = user_data['site'])
+    df = ws.get_forecast_df(hour=7)
+    df = df[(df['wind'] > user_data['thresholds']['wind']) & (df['wave'] < user_data['thresholds']['wave'])]
 
     # generate messag and send
     if len(df) > 0:

@@ -3,10 +3,9 @@ from bs4 import BeautifulSoup
 import numpy as np
 from datetime import datetime, date, timedelta
 import pandas as pd
-from scraper.scraper import Scraper
 
 
-class Windfinder(Scraper):
+class Windfinder():
 
     def get_soup(self, spot='marina_tel_aviv'):
         urlPrefix = 'http://www.windfinder.com/forecast/'
