@@ -93,11 +93,15 @@ for user in data:
     # generate messag and send
     if len(df) > 0:
         for ind in df.index:
-            mess = 'Next ' + df['weekday'][ind] + ',' + str(ind.day) + '.' + str(ind.month) + ', has ' + \
+            mess = 'Next ' + df['weekday'][ind] + ', ' + str(ind.day) + '.' + str(ind.month) + ', has ' + \
                    str(int(df['wind'][ind])) + ' Kts '
             if df['wave'][ind] > -1:
                 mess = mess + 'and ' + str(int(100 * np.round(df['wave'][ind], 1))) + ' cm waves '
-            mess = mess + 'at ' + str(ind.hour) + ' o''clock'
+            mess = mess + 'at ' + str(ind.hour)
+            if ind.hour < 12:
+                mess = mess + ' a.m.'
+            else:
+                mess = mess + ' p.m'
             tb.send_message(user, mess)
 
     print(user_data)
