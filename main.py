@@ -6,8 +6,6 @@
 
 import sys
 import copy
-from scraper.windfinder import Windfinder
-from scraper.windguru import Windguru
 import numpy as np
 import yaml
 import telebot
@@ -27,27 +25,32 @@ ref_data = data[123]
 
 def update_config(mess, data_dict):
 
+    change_flag = False
+
     if 'wind_th' in mess:
         val = [int(s) for s in mess.split() if s.isdigit()]
         data_dict['thresholds']['wind'] = val[0]
+        change_flag = True
 
     if 'wave_th' in mess:
         val = [int(s) for s in mess.split() if s.isdigit()]
         data_dict['thresholds']['wave'] = val[0]
+        change_flag = True
 
     if 'hour' in mess:
         val = [int(s) for s in mess.split() if s.isdigit()]
         data_dict['notifications']['hour'] = val[0]
+        change_flag = True
 
     if 'site' in mess:
         data_dict['site'] = mess.split()[-1]
+        change_flag = True
 
-    return data_dict
+    return data_dict, change_flag
 
-# new flow
-# 3
-# 1. get updates and see if config.yaml needs to be changed
+
 updates = tb.get_updates()
+
 if len(updates) > 0:
     for up in updates:
 
@@ -57,14 +60,21 @@ if len(updates) > 0:
             continue
         mess = up.message.text
 
-
-        # check validity
-
         # update yaml
         if user_id not in data.keys():  # new id
             data[user_id] = copy.deepcopy(ref_data)
+
         user_data = data[user_id]
-        user_data = update_config(mess, user_data)
+        user_data, change_flag = update_config(mess, user_data)
+
+        if not change_flag:
+            error_mess = """incorrect input. please enter one of the following: 
+                         wind_th = 7,
+                         wave_th = 1,
+                         hour = 7,
+                         site = windguru/windfinder"""
+            tb.send_message(user_id, error_mess)
+
 
         # remove user
         if 'stop' in mess.lower():
