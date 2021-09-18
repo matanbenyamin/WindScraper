@@ -86,9 +86,10 @@ for user in data:
     # get df and user data
     user_data = data[user]
     wf = Windfinder()
-    soup = wf.get_soup()
-    df = wf.get_forecast_df(soup=soup, hour=user_data['notifications']['sailing_hour'])
+    df = wf.get_forecast_df(hour=user_data['notifications']['sailing_hour'])
     df = df[(df['wind'] > user_data['thresholds']['wind']) & (df['wave'] < user_data['thresholds']['wave'])]
+
+    ws = wIndScraper()
 
     # generate messag and send
     if len(df) > 0:
