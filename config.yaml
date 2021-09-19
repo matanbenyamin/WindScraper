@@ -3,26 +3,25 @@
     sailing_hour: 7
     saling_duration: 2
     spot: marina_tel_aviv
+  site: windguru
   thresholds:
     wave: 1
     wind: 4
-  site: windguru
 630924196:
   notifications:
     sailing_hour: 7
     saling_duration: 2
     spot: marina_tel_aviv
+  site: windguru
   thresholds:
     wave: 1.3
     wind: 5
-  site: windguru
 2037551057:
   notifications:
     sailing_hour: 7
     saling_duration: 2
     spot: marina_tel_aviv
+  site: windguru
   thresholds:
     wave: 1
     wind: 4
-  site: windguru
-
