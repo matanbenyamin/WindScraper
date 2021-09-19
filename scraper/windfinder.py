@@ -3,10 +3,9 @@ from bs4 import BeautifulSoup
 import numpy as np
 from datetime import datetime, date, timedelta
 import pandas as pd
-from scraper.scraper import Scraper
 
 
-class Windfinder(Scraper):
+class Windfinder():
 
     def get_soup(self, spot='marina_tel_aviv'):
         urlPrefix = 'http://www.windfinder.com/forecast/'
@@ -70,7 +69,8 @@ class Windfinder(Scraper):
 
         return np.interp(time, [hours[ind1], hours[ind2]], [w1, w2])
 
-    def get_forecast_df(self, soup, hour):
+    def get_forecast_df(self, hour):
+        soup = self.get_soup()
         df = pd.DataFrame()
         week_dict = {0: 'Monday', 1: 'Tuesday', 2: 'Wednesday', 3: 'Thursday', 4: 'Friday', 5: 'Saturday', 6: 'Sunday'}
         forecast_flag = True

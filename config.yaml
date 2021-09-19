@@ -1,8 +1,28 @@
-thresholds:
-  wind: 4 # knots, minimal wind for sailing
-  wave: 1 # meters, maximal waves for sailing
-
-notifications:
-  sailing_hour: 7 #24h hour, sailing start
-  saling_duration: 2 #hr
+123:
+  notifications:
+    sailing_hour: 7
+    saling_duration: 2
+    spot: marina_tel_aviv
+  thresholds:
+    wave: 1
+    wind: 4
+  site: windguru
+630924196:
+  notifications:
+    sailing_hour: 7
+    saling_duration: 2
+    spot: marina_tel_aviv
+  thresholds:
+    wave: 1.3
+    wind: 5
+  site: windguru
+2037551057:
+  notifications:
+    sailing_hour: 7
+    saling_duration: 2
+    spot: marina_tel_aviv
+  thresholds:
+    wave: 1
+    wind: 4
+  site: windguru
 
