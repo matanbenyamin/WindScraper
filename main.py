@@ -73,7 +73,7 @@ if len(updates) > 0:
                          wave_th = 1,
                          hour = 7,
                          site = windguru/windfinder"""
-            # tb.send_message(user_id, error_mess)
+            tb.send_message(user_id, error_mess)
 
 
         # remove user
