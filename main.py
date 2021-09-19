@@ -1,4 +1,5 @@
 # pip freeze > requirements.txt
+# sudo apt-get install chromium-chromedriver
 # pip install - r requirements.txt
 ## how to create the telegram bot
 # https://medium.com/@robertbracco1/how-to-write-a-telegram-bot-to-send-messages-with-python-bcdf45d0a580
@@ -73,7 +74,7 @@ if len(updates) > 0:
                          wave_th = 1,
                          hour = 7,
                          site = windguru/windfinder"""
-            tb.send_message(user_id, error_mess)
+            #tb.send_message(user_id, error_mess)
 
 
         # remove user
@@ -91,9 +92,6 @@ if len(updates) > 0:
 # hour =
 # site = windguru/windfinder
 # spot?
-
-#def update_config_file(updates, data):
-
 
 # get all caht ids
 for user in data:

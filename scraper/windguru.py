@@ -1,4 +1,5 @@
 import requests, re
+import sys
 from bs4 import BeautifulSoup
 import numpy as np
 from datetime import datetime, date, timedelta
@@ -24,13 +25,24 @@ class Windguru():
         week_dict = {0: 'Monday', 1: 'Tuesday', 2: 'Wednesday', 3: 'Thursday', 4: 'Friday', 5: 'Saturday', 6: 'Sunday'}
         hours = np.array([6, 9, 12, 15, 18, 21,24])
 
+
         CHROMEDRIVER_PATH = 'C:\\Users\lab7\Downloads\chromedriver_win32_2\chromedriver.exe'
+
         WINDOW_SIZE = "1920,1080"
         chrome_options = Options()
         chrome_options.add_argument("--headless")
         chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
-        d = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH,
-                             chrome_options=chrome_options)
+
+
+        # if ubuntu
+        if sys.platform=='linux':
+            # sudo apt-get install chromium-chromedriver
+            d = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver",
+                                 chrome_options=chrome_options)
+        else: # windows
+            d = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH,
+                                 chrome_options=chrome_options)
+
         spot = '308'
         urlPrefix = 'https://www.windguru.cz/'
         url = urlPrefix + spot
@@ -49,7 +61,8 @@ class Windguru():
 
         day_breaks = np.array(np.where(np.array(hours)<5))
         day_breaks = day_breaks[0].tolist()
-        day_breaks.insert(0,0)
+        if day_breaks[0]>5:
+            day_breaks.insert(0,0)
         for ind in range(1,len(day_breaks)):
             curr_day = datetime.today() + timedelta(days=ind)
             curr_day = curr_day.replace(hour=hour, minute=0, second=0, microsecond=0)
