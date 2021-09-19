@@ -92,7 +92,6 @@ if len(updates) > 0:
 # site = windguru/windfinder
 # spot?
 
-#def update_config_file(updates, data):
 
 
 # get all caht ids
