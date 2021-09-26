@@ -45,17 +45,20 @@ s = utf8.decode('utf-8')
 date_ind = [m.start() for m in re.finditer('מועד', s)][0]
 date = datetime.datetime.strptime(s[date_ind-17:date_ind-1],'%H:%M %d/%m/%Y')
 
-ws = Scraper(site='windguru')
-df = ws.get_forecast_df(hour = date.hour)
-df = df[df.index.day==date.day]
+# only if date is in the future
+if date>datetime.datetime.now():
 
-mess = 'Wind in your next scheduled sailing: '
-mess = mess+str(np.round(df['wind'][0],1))
-mess = mess +' Kts'
-mess = mess+ ' and '
-mess = mess+str(int(100 * np.round(df['wave'][0], 1))) + ' cm waves '
+    ws = Scraper(site='windguru')
+    df = ws.get_forecast_df(hour = date.hour)
+    df = df[df.index.day==date.day]
+
+    mess = 'Wind in your next scheduled sailing: '
+    mess = mess+str(np.round(df['wind'][0],1))
+    mess = mess +' Kts'
+    mess = mess+ ' and '
+    mess = mess+str(int(100 * np.round(df['wave'][0], 1))) + ' cm waves '
 
 
-user = 630924196
-tb.send_message(user, mess)
+    user = 630924196
+    tb.send_message(user, mess)
 

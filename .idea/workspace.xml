@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73cb79c7-7f82-4c84-806e-cda4a537d9c9" name="Changes" comment="works on ubuntu as well">
-      <change beforePath="$PROJECT_DIR$/notify/TrackSeatime.py" beforeDir="false" afterPath="$PROJECT_DIR$/notify/TrackSeatime.py" afterDir="false" />
-    </list>
+    <list default="true" id="73cb79c7-7f82-4c84-806e-cda4a537d9c9" name="Changes" comment="added schedukled sailing weather tracking" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -252,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631985811010</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="added schedukled sailing weather tracking">
+      <created>1632645091823</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1632645091823</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +289,8 @@
     <MESSAGE value="option to remove users" />
     <MESSAGE value="windguru v1" />
     <MESSAGE value="windguru v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="windguru v2" />
+    <MESSAGE value="added schedukled sailing weather tracking" />
+    <option name="LAST_COMMIT_MESSAGE" value="added schedukled sailing weather tracking" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
