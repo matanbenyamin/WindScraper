@@ -3,8 +3,7 @@
 # pip install - r requirements.txt
 ## how to create the telegram bot
 # https://medium.com/@robertbracco1/how-to-write-a-telegram-bot-to-send-messages-with-python-bcdf45d0a580
-
-
+import datetime
 import sys
 import copy
 import numpy as np
@@ -101,7 +100,18 @@ for user in data:
     user_data = data[user]
 
     ws = Scraper(site = user_data['site'])
-    df = ws.get_forecast_df(hour=7)
+    now = datetime.datetime.now()
+    flag = False
+    while (datetime.datetime.now()-now).seconds<30:
+        try:
+            df = ws.get_forecast_df(hour=user_data['notifications']['sailing_hour'])
+            flag = True
+        except:
+            1
+        if flag:
+            break
+
+
     df = df[(df['wind'] > user_data['thresholds']['wind']) & (df['wave'] < user_data['thresholds']['wave'])]
 
     # generate messag and send
