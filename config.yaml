@@ -7,6 +7,15 @@
   thresholds:
     wave: 1
     wind: 4
+533624985:
+  notifications:
+    sailing_hour: 7
+    saling_duration: 2
+    spot: marina_tel_aviv
+  site: windguru
+  thresholds:
+    wave: 1
+    wind: 4
 630924196:
   notifications:
     sailing_hour: 7

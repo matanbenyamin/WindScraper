@@ -48,7 +48,7 @@ class Windguru():
         url = urlPrefix + spot
 
         d.get(url)
-        time.sleep(0.5)
+        time.sleep(2)
         a = d.find_elements_by_id('tabid_0_0_WINDSPD')[0]
         winds = [int(x) for x in a.text.split()]
 
