@@ -64,7 +64,7 @@ class Windguru():
         if day_breaks[0]>5:
             day_breaks.insert(0,0)
         for ind in range(1,len(day_breaks)):
-            curr_day = datetime.today() + timedelta(days=ind)
+            curr_day = datetime.today() + timedelta(days=ind-1)
             curr_day = curr_day.replace(hour=hour, minute=0, second=0, microsecond=0)
 
             curr_day_hours = hours[day_breaks[ind-1]:day_breaks[ind]]

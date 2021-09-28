@@ -6,14 +6,18 @@ import quopri
 from scraper.scraper import Scraper
 import numpy as np
 import telebot
+import sys
+sys.path.extend(['C:/Users/lab7/PycharmProjects/WindScraper'])
+sys.path.extend(['C:/Users/lab7/PycharmProjects/WindScraper/scraper'])
+
 
 TOKEN = "1972757944:AAHSZ3MjqycJVZieWv-7MPgCAkYQuiKM_OA"
 tb = telebot.TeleBot(TOKEN)  # create a new Telegram Bot object
 
 imapServer = "imap.googlemail.com"
 port = "993"
-username =
-password =
+username = 'matan.benyamin'
+password = 'bardugomatan2'
 
 req_time = datetime.datetime.now()
 ##how often to check ? give interval in seconds! Checking too often might performance and stability.
@@ -58,6 +62,7 @@ if date>datetime.datetime.now():
     mess = mess+ ' and '
     mess = mess+str(int(100 * np.round(df['wave'][0], 1))) + ' cm waves '
 
+    print(mess)
 
     user = 630924196
     tb.send_message(user, mess)
