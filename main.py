@@ -12,18 +12,17 @@ from scraper.scraper import Scraper
 
 TOKEN = "1972757944:AAHSZ3MjqycJVZieWv-7MPgCAkYQuiKM_OA"
 tb = telebot.TeleBot(TOKEN)  # create a new Telegram Bot object
-#tb.polling(none_stop=False, interval=0, timeout=20)
+# tb.polling(none_stop=False, interval=0, timeout=20)
 
 
 fname = "config.yaml"
-#fname = "C:\\Users\lab7\PycharmProjects\WindScraper\config.yaml"
+# fname = "C:\\Users\lab7\PycharmProjects\WindScraper\config.yaml"
 stream = open(fname, 'r')
 data = yaml.load(stream)
 ref_data = data[123]
 
 
 def update_config(mess, data_dict):
-
     change_flag = False
 
     if 'wind_th' in mess:
@@ -53,9 +52,9 @@ updates = tb.get_updates()
 if len(updates) > 0:
     for up in updates:
 
-        #try:
+        # try:
         user_id = up.message.chat.id
-        if user_id==123:
+        if user_id == 123:
             continue
         mess = up.message.text
 
@@ -72,8 +71,7 @@ if len(updates) > 0:
                          wave_th = 1,
                          hour = 7,
                          site = windguru/windfinder"""
-            #tb.send_message(user_id, error_mess)
-
+            # tb.send_message(user_id, error_mess)
 
         # remove user
         if 'stop' in mess.lower():
@@ -81,8 +79,8 @@ if len(updates) > 0:
 
         with open(fname, 'w') as yaml_file:
             yaml_file.write(yaml.dump(data, default_flow_style=False))
-         #except:
-         #   print('failed')
+        # except:
+        #   print('failed')
 
 # syntax:
 # wind_th = 7
@@ -91,7 +89,7 @@ if len(updates) > 0:
 # site = windguru/windfinder
 # spot?
 
-#def update_config_file(updates, data):
+# def update_config_file(updates, data):
 
 
 # get all caht ids
@@ -101,10 +99,10 @@ for user in data:
     # get df and user data
     user_data = data[user]
 
-    ws = Scraper(site = user_data['site'])
+    ws = Scraper(site=user_data['site'])
     now = datetime.datetime.now()
     flag = False
-    while (datetime.datetime.now()-now).seconds<30:
+    while (datetime.datetime.now() - now).seconds < 30:
         try:
             df = ws.get_forecast_df(hour=user_data['notifications']['sailing_hour'])
             flag = True
@@ -112,7 +110,6 @@ for user in data:
             1
         if flag:
             break
-
 
     df = df[(df['wind'] > user_data['thresholds']['wind']) & (df['wave'] < user_data['thresholds']['wave'])]
 
@@ -128,7 +125,12 @@ for user in data:
                 mess = mess + ' a.m.'
             else:
                 mess = mess + ' p.m'
-            tb.send_message(user, mess)
+
+
+            try:
+                tb.send_message(user, mess)
+                print('message sent!')
+            except:
+                print('telegram error!')
 
     print(user_data)
-
