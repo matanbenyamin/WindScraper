@@ -49,6 +49,8 @@ s = utf8.decode('utf-8')
 date_ind = [m.start() for m in re.finditer('מועד', s)][0]
 date = datetime.datetime.strptime(s[date_ind-17:date_ind-1],'%H:%M %d/%m/%Y')
 
+# date =  datetime.datetime.strptime('15:00 28/10/2021','%H:%M %d/%m/%Y')
+
 # only if date is in the future
 if date>datetime.datetime.now():
 

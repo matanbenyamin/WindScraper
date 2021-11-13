@@ -3,6 +3,7 @@
 ## how to create the telegram bot
 # https://medium.com/@robertbracco1/how-to-write-a-telegram-bot-to-send-messages-with-python-bcdf45d0a580
 import datetime
+import os
 import sys
 import copy
 import numpy as np
@@ -15,8 +16,8 @@ tb = telebot.TeleBot(TOKEN)  # create a new Telegram Bot object
 # tb.polling(none_stop=False, interval=0, timeout=20)
 
 
-fname = "config.yaml"
-# fname = "C:\\Users\lab7\PycharmProjects\WindScraper\config.yaml"
+#fname = "config.yaml"
+fname = "C:\\Users\lab7\PycharmProjects\WindScraper\config.yaml"
 stream = open(fname, 'r')
 data = yaml.load(stream)
 ref_data = data[123]
@@ -46,8 +47,12 @@ def update_config(mess, data_dict):
 
     return data_dict, change_flag
 
-
-updates = tb.get_updates()
+import os
+os.path
+try:
+    updates = tb.get_updates(2)
+except:
+    1
 
 if len(updates) > 0:
     for up in updates:

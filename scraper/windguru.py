@@ -27,7 +27,7 @@ class Windguru():
 
 
         CHROMEDRIVER_PATH = 'C:\\Users\lab7\Downloads\chromedriver_win32_2\chromedriver.exe'
-
+        CHROMEDRIVER_PATH  = 'C:\\Users\lab7\Desktop\chromedriver_win32\chromedriver.exe'
         WINDOW_SIZE = "1920,1080"
         chrome_options = Options()
         chrome_options.add_argument("--headless")
